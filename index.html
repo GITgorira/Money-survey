@@ -3,82 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アンケートフォーム</title>
+    <title>金融アンケート調査</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-        }
-        form {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+            padding: 0;
         }
         h1 {
             text-align: center;
         }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
         .question {
             margin-bottom: 20px;
         }
-        .question p {
+        .question label {
+            display: block;
+            margin-bottom: 8px;
             font-weight: bold;
         }
-        .radio-group {
+        .options {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+        }
+        .options input {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>アンケートフォーム</h1>
+    <h1>金融アンケート調査</h1>
+    <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
     <form>
         <div class="question">
-            <p>仕事をしていますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q1" value="はい"> はい</label>
-                <label><input type="radio" name="q1" value="いいえ"> いいえ</label>
+            <label for="q1">質問１．仕事をしていますか。</label>
+            <div class="options">
+                <input type="radio" id="q1_yes" name="q1" value="はい">
+                <label for="q1_yes">はい</label>
+                <input type="radio" id="q1_no" name="q1" value="いいえ">
+                <label for="q1_no">いいえ</label>
+                <input type="radio" id="q1_na" name="q1" value="答えられない">
+                <label for="q1_na">答えられない</label>
+                <input type="radio" id="q1_other" name="q1" value="その他">
+                <label for="q1_other">その他</label>
             </div>
         </div>
+
         <div class="question">
-            <p>今の収入に満足していますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q2" value="はい"> はい</label>
-                <label><input type="radio" name="q2" value="いいえ"> いいえ</label>
+            <label for="q2">質問２．どのような立場ですか。</label>
+            <div class="options">
+                <input type="radio" id="q2_fulltime" name="q2" value="会社の正社員">
+                <label for="q2_fulltime">会社の正社員</label>
+                <input type="radio" id="q2_temp" name="q2" value="派遣社員">
+                <label for="q2_temp">派遣社員</label>
+                <input type="radio" id="q2_parttime" name="q2" value="アルバイト">
+                <label for="q2_parttime">アルバイト</label>
+                <input type="radio" id="q2_na" name="q2" value="答えられない">
+                <label for="q2_na">答えられない</label>
+                <input type="radio" id="q2_other" name="q2" value="その他">
+                <label for="q2_other">その他</label>
             </div>
         </div>
+
         <div class="question">
-            <p>収入を副業等を行ってより増やしたいと考えていますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q3" value="はい"> はい</label>
-                <label><input type="radio" name="q3" value="いいえ"> いいえ</label>
+            <label for="q3">質問３．仕事等での収入（年収）はいくらほどですか。</label>
+            <div class="options">
+                <input type="radio" id="q3_0_100" name="q3" value="０～１００万円">
+                <label for="q3_0_100">０～１００万円</label>
+                <input type="radio" id="q3_100_500" name="q3" value="１００～５００万円">
+                <label for="q3_100_500">１００～５００万円</label>
+                <input type="radio" id="q3_500_1000" name="q3" value="５００～１０００万円">
+                <label for="q3_500_1000">５００～１０００万円</label>
+                <input type="radio" id="q3_above_1000" name="q3" value="１０００万円以上">
+                <label for="q3_above_1000">１０００万円以上</label>
+                <input type="radio" id="q3_na" name="q3" value="答えられない">
+                <label for="q3_na">答えられない</label>
+                <input type="radio" id="q3_other" name="q3" value="その他">
+                <label for="q3_other">その他</label>
             </div>
         </div>
+
         <div class="question">
-            <p>収入を増やすために副業等をしていますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q4" value="はい"> はい</label>
-                <label><input type="radio" name="q4" value="いいえ"> いいえ</label>
+            <label for="q4">質問４．今の収入に満足していますか。</label>
+            <div class="options">
+                <input type="radio" id="q4_yes" name="q4" value="はい">
+                <label for="q4_yes">はい</label>
+                <input type="radio" id="q4_no" name="q4" value="いいえ">
+                <label for="q4_no">いいえ</label>
+                <input type="radio" id="q4_na" name="q4" value="答えられない">
+                <label for="q4_na">答えられない</label>
+                <input type="radio" id="q4_other" name="q4" value="その他">
+                <label for="q4_other">その他</label>
             </div>
         </div>
+
         <div class="question">
-            <p>投資には興味がありますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q5" value="はい"> はい</label>
-                <label><input type="radio" name="q5" value="いいえ"> いいえ</label>
+            <label for="q5">質問５．収入を副業等を行ってより増やしたいと考えていますか。</label>
+            <div class="options">
+                <input type="radio" id="q5_yes" name="q5" value="はい">
+                <label for="q5_yes">はい</label>
+                <input type="radio" id="q5_no" name="q5" value="いいえ">
+                <label for="q5_no">いいえ</label>
+                <input type="radio" id="q5_na" name="q5" value="答えられない">
+                <label for="q5_na">答えられない</label>
+                <input type="radio" id="q5_other" name="q5" value="その他">
+                <label for="q5_other">その他</label>
             </div>
         </div>
+
         <div class="question">
-            <p>投資で稼げる自信はありますか。</p>
-            <div class="radio-group">
-                <label><input type="radio" name="q6" value="はい"> はい</label>
-                <label><input type="radio" name="q6" value="いいえ"> いいえ</label>
+            <label for="q6">質問６．収入を増やすために副業等をしていますか。</label>
+            <div class="options">
+                <input type="radio" id="q6_yes" name="q6" value="はい">
+                <label for="q6_yes">はい</label>
+                <input type="radio" id="q6_no" name="q6" value="いいえ">
+                <label for="q6_no">いいえ</label>
+                <input type="radio" id="q6_na" name="q6" value="答えられない">
+                <label for="q6_na">答えられない</label>
+                <input type="radio" id="q6_other" name="q6" value="その他">
+                <label for="q6_other">その他</label>
             </div>
         </div>
-        <div style="text-align: center;">
-            <button type="submit">送信</button>
+
+        <div class="question">
+            <label for="q7">質問７．投資には興味がありますか。</label>
+            <div class="options">
+                <input type="radio" id="q7_yes" name="q7" value="はい">
+                <label for="q7_yes">はい</label>
+                <input type="radio" id="q7_no" name="q7" value="いいえ">
+                <label for="q7_no">いいえ</label>
+                <input type="radio" id="q7_na" name="q7" value="答えられない">
+                <label for="q7_na">答えられない</label>
+                <input type="radio" id="q7_other" name="q7" value="その他">
+                <label for="q7_other">その他</label>
+            </div>
         </div>
+
+        <div class="question">
+            <label for="q8">質問８．投資で稼ぐ自信はありますか。</label>
+            <div class="options">
+                <input type="radio" id="q8_yes" name="q8" value="はい">
+                <label for="q8_yes">はい</label>
+                <input type="radio" id="q8_no" name="q8" value="いいえ">
+                <label for="q8_no">いいえ</label>
+                <input type="radio" id="q8_na" name="q8" value="答えられない">
+                <label for="q8_na">答えられない</label>
+                <input type="radio" id="q8_other" name="q8" value="その他">
+                <label for="q8_other">その他</label>
+            </div>
+        </div>
+
+        <button type="submit">送信</button>
     </form>
 </body>
 </html>
