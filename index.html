@@ -3,71 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大阪市の紹介</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            background: #444;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>収入調査アンケート</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>大阪市の紹介</h1>
-    </header>
-    <nav>
-        <a href="#about">大阪市について</a>
-        <a href="#events">イベント・観光</a>
-        <a href="#business">産業・ビジネス</a>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>大阪市について</h2>
-            <p>大阪市は、日本の関西地方に位置する大都市であり、歴史と文化が豊かな地域です。大阪市は、国内外から多くの観光客が訪れる観光地としても知られています。</p>
-        </section>
-        <section id="events">
-            <h2>イベント・観光</h2>
-            <p>大阪市では、年間を通じて様々なイベントや祭りが開催されます。また、大阪城や通天閣、道頓堀などの観光名所も多く、観光客に人気のスポットが多数あります。</p>
-        </section>
-        <section id="business">
-            <h2>産業・ビジネス</h2>
-            <p>大阪市は、商業の中心地としても発展しており、多くの企業が集まるビジネスの拠点です。大阪商工会議所などの経済団体も活発に活動しています。</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 大阪市</p>
-    </footer>
+    <div class="container">
+        <h1>収入調査アンケート</h1>
+        <form action="submit.php" method="post">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">年齢:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">性別:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+                <option value="other">その他</option>
+                <option value="no_answer">回答しない</option>
+            </select>
+
+            <label for="occupation">職業:</label>
+            <input type="text" id="occupation" name="occupation" required>
+
+            <label for="income">年収:</label>
+            <input type="number" id="income" name="income" required>
+
+            <input type="submit" value="送信">
+        </form>
+    </div>
 </body>
 </html>
