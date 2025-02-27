@@ -3,54 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>収入調査アンケート</title>
+    <title>アンケートフォーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
-    <h1>収入調査アンケート</h1>
-    <form action="/submit" method="post">
-        <div>
-            <label>仕事をしていますか？</label>
-            <input type="radio" id="work_yes" name="working" value="yes">
-            <label for="work_yes">はい</label>
-            <input type="radio" id="work_no" name="working" value="no">
-            <label for="work_no">いいえ</label>
+    <h1>アンケートフォーム</h1>
+    <form>
+        <div class="question">
+            <p>仕事をしていますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q1" value="はい"> はい</label>
+                <label><input type="radio" name="q1" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <div>
-            <label>今の収入に満足していますか？</label>
-            <input type="radio" id="satisfied_yes" name="satisfied" value="yes">
-            <label for="satisfied_yes">はい</label>
-            <input type="radio" id="satisfied_no" name="satisfied" value="no">
-            <label for="satisfied_no">いいえ</label>
+        <div class="question">
+            <p>今の収入に満足していますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q2" value="はい"> はい</label>
+                <label><input type="radio" name="q2" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <div>
-            <label>収入を副業等を行ってより増やしたいと考えていますか？</label>
-            <input type="radio" id="increase_yes" name="increase" value="yes">
-            <label for="increase_yes">はい</label>
-            <input type="radio" id="increase_no" name="increase" value="no">
-            <label for="increase_no">いいえ</label>
+        <div class="question">
+            <p>収入を副業等を行ってより増やしたいと考えていますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q3" value="はい"> はい</label>
+                <label><input type="radio" name="q3" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <div>
-            <label>収入を増やすために副業等をしていますか？</label>
-            <input type="radio" id="side_job_yes" name="side_job" value="yes">
-            <label for="side_job_yes">はい</label>
-            <input type="radio" id="side_job_no" name="side_job" value="no">
-            <label for="side_job_no">いいえ</label>
+        <div class="question">
+            <p>収入を増やすために副業等をしていますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q4" value="はい"> はい</label>
+                <label><input type="radio" name="q4" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <div>
-            <label>投資には興味がありますか？</label>
-            <input type="radio" id="investment_interest_yes" name="investment_interest" value="yes">
-            <label for="investment_interest_yes">はい</label>
-            <input type="radio" id="investment_interest_no" name="investment_interest" value="no">
-            <label for="investment_interest_no">いいえ</label>
+        <div class="question">
+            <p>投資には興味がありますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q5" value="はい"> はい</label>
+                <label><input type="radio" name="q5" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <div>
-            <label>投資で稼げる自信はありますか？</label>
-            <input type="radio" id="investment_confidence_yes" name="investment_confidence" value="yes">
-            <label for="investment_confidence_yes">はい</label>
-            <input type="radio" id="investment_confidence_no" name="investment_confidence" value="no">
-            <label for="investment_confidence_no">いいえ</label>
+        <div class="question">
+            <p>投資で稼げる自信はありますか。</p>
+            <div class="radio-group">
+                <label><input type="radio" name="q6" value="はい"> はい</label>
+                <label><input type="radio" name="q6" value="いいえ"> いいえ</label>
+            </div>
         </div>
-        <button type="submit">送信</button>
+        <div style="text-align: center;">
+            <button type="submit">送信</button>
+        </div>
     </form>
 </body>
 </html>
