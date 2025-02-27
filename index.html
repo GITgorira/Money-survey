@@ -4,34 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>収入調査アンケート</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>収入調査アンケート</h1>
-        <form action="submit.php" method="post">
-            <label for="name">名前:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="age">年齢:</label>
-            <input type="number" id="age" name="age" required>
-
-            <label for="gender">性別:</label>
-            <select id="gender" name="gender" required>
-                <option value="male">男性</option>
-                <option value="female">女性</option>
-                <option value="other">その他</option>
-                <option value="no_answer">回答しない</option>
-            </select>
-
-            <label for="occupation">職業:</label>
-            <input type="text" id="occupation" name="occupation" required>
-
-            <label for="income">年収:</label>
-            <input type="number" id="income" name="income" required>
-
-            <input type="submit" value="送信">
-        </form>
-    </div>
+    <h1>収入調査アンケート</h1>
+    <form action="/submit" method="post">
+        <div>
+            <label>仕事をしていますか？</label>
+            <input type="radio" id="work_yes" name="working" value="yes">
+            <label for="work_yes">はい</label>
+            <input type="radio" id="work_no" name="working" value="no">
+            <label for="work_no">いいえ</label>
+        </div>
+        <div>
+            <label>今の収入に満足していますか？</label>
+            <input type="radio" id="satisfied_yes" name="satisfied" value="yes">
+            <label for="satisfied_yes">はい</label>
+            <input type="radio" id="satisfied_no" name="satisfied" value="no">
+            <label for="satisfied_no">いいえ</label>
+        </div>
+        <div>
+            <label>収入を副業等を行ってより増やしたいと考えていますか？</label>
+            <input type="radio" id="increase_yes" name="increase" value="yes">
+            <label for="increase_yes">はい</label>
+            <input type="radio" id="increase_no" name="increase" value="no">
+            <label for="increase_no">いいえ</label>
+        </div>
+        <div>
+            <label>収入を増やすために副業等をしていますか？</label>
+            <input type="radio" id="side_job_yes" name="side_job" value="yes">
+            <label for="side_job_yes">はい</label>
+            <input type="radio" id="side_job_no" name="side_job" value="no">
+            <label for="side_job_no">いいえ</label>
+        </div>
+        <div>
+            <label>投資には興味がありますか？</label>
+            <input type="radio" id="investment_interest_yes" name="investment_interest" value="yes">
+            <label for="investment_interest_yes">はい</label>
+            <input type="radio" id="investment_interest_no" name="investment_interest" value="no">
+            <label for="investment_interest_no">いいえ</label>
+        </div>
+        <div>
+            <label>投資で稼げる自信はありますか？</label>
+            <input type="radio" id="investment_confidence_yes" name="investment_confidence" value="yes">
+            <label for="investment_confidence_yes">はい</label>
+            <input type="radio" id="investment_confidence_no" name="investment_confidence" value="no">
+            <label for="investment_confidence_no">いいえ</label>
+        </div>
+        <button type="submit">送信</button>
+    </form>
 </body>
 </html>
