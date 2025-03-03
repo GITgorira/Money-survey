@@ -9,59 +9,78 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
         }
         .container {
-            background: white;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            max-width: 600px;
-            width: 100%;
         }
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
         .question {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .question label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
-        .question select, .question input {
+        .question select,
+        .question input {
             width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         .submit-btn {
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007BFF;
-            color: white;
+            background-color: #007bff;
+            color: #fff;
             border: none;
             border-radius: 4px;
+            font-size: 1em;
             cursor: pointer;
-            font-size: 16px;
+            margin-top: 20px;
         }
         .submit-btn:hover {
             background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result img {
+            height: 36px;
+            border: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</h1>
-        <form action="thank_you.html" method="POST">
+        <h1>金融アンケート調査</h1>
+        <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
+        <form id="survey-form">
             <div class="question">
-                <label for="question1">質問１　仕事をしていますか。</label>
-                <select id="question1" name="question1">
+                <label for="q1">質問１　仕事をしていますか。</label>
+                <select id="q1" name="q1">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -69,8 +88,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question2">質問２　どのような立場ですか。</label>
-                <select id="question2" name="question2">
+                <label for="q2">質問２　どのような立場ですか。</label>
+                <select id="q2" name="q2">
                     <option value="会社の正社員">会社の正社員</option>
                     <option value="派遣社員">派遣社員</option>
                     <option value="アルバイト">アルバイト</option>
@@ -79,8 +98,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
-                <select id="question3" name="question3">
+                <label for="q3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
+                <select id="q3" name="q3">
                     <option value="０～１００万円">０～１００万円</option>
                     <option value="１００～５００万円">１００～５００万円</option>
                     <option value="５００～１０００万円">５００～１０００万円</option>
@@ -90,8 +109,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question4">質問４　今の収入に満足していますか。</label>
-                <select id="question4" name="question4">
+                <label for="q4">質問４　今の収入に満足していますか。</label>
+                <select id="q4" name="q4">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -99,8 +118,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
-                <select id="question5" name="question5">
+                <label for="q5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
+                <select id="q5" name="q5">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -108,8 +127,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question6">質問６　収入を増やすために副業等をしていますか。</label>
-                <select id="question6" name="question6">
+                <label for="q6">質問６　収入を増やすために副業等をしていますか。</label>
+                <select id="q6" name="q6">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -117,8 +136,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question7">質問７　投資には興味がありますか。</label>
-                <select id="question7" name="question7">
+                <label for="q7">質問７　投資には興味がありますか。</label>
+                <select id="q7" name="q7">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -126,8 +145,8 @@
                 </select>
             </div>
             <div class="question">
-                <label for="question8">質問８　投資で稼ぐ自信はありますか。</label>
-                <select id="question8" name="question8">
+                <label for="q8">質問８　投資で稼ぐ自信はありますか。</label>
+                <select id="q8" name="q8">
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -136,6 +155,18 @@
             </div>
             <button type="submit" class="submit-btn">送信</button>
         </form>
+        <div id="result" class="result" style="display: none;">
+            <p>アンケートのご協力ありがとうございました。</p>
+            <p>投資に興味のある方は、「投資に自信がない方も最低〇〇円は稼げる！投資のプロが教える絶対に成功する裏技投資術！」</p>
+            <a href="https://lin.ee/I7x60qK"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加"></a>
+        </div>
     </div>
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('survey-form').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
