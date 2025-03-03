@@ -7,83 +7,49 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
         .container {
-            width: 80%;
             max-width: 600px;
-            background-color: #fff;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
             text-align: center;
-            margin-bottom: 20px;
-        }
-        p {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 30px;
         }
         .question {
-            margin-bottom: 20px;
-        }
-        .question label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
+            margin: 20px 0;
         }
         .question select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 8px;
+            margin-top: 8px;
         }
-        .question select option[value=""] {
+        .question select option:first-child {
             color: gray;
         }
         .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            border-radius: 4px;
-            font-size: 1em;
             cursor: pointer;
+        }
+        .submit-btn:disabled {
+            background-color: gray;
+        }
+        .result-message {
+            display: none;
             margin-top: 20px;
-        }
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .result img {
-            height: 36px;
-            border: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>金融アンケート調査</h1>
-        <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
-        <form id="survey-form">
+        <h2>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</h2>
+        <form id="surveyForm">
             <div class="question">
-                <label for="q1">質問１　仕事をしていますか。</label>
-                <select id="q1" name="q1" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問１ 仕事をしていますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -91,9 +57,9 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q2">質問２　どのような立場ですか。</label>
-                <select id="q2" name="q2" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問２ どのような立場ですか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="会社の正社員">会社の正社員</option>
                     <option value="派遣社員">派遣社員</option>
                     <option value="アルバイト">アルバイト</option>
@@ -102,21 +68,21 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
-                <select id="q3" name="q3" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
-                    <option value="０～１００万円">０～１００万円</option>
-                    <option value="１００～５００万円">１００～５００万円</option>
-                    <option value="５００～１０００万円">５００～１０００万円</option>
-                    <option value="１０００万円以上">１０００万円以上</option>
+                <label>質問３ 仕事等での収入（年収）はいくらほどですか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="0～100万円">0～100万円</option>
+                    <option value="100～500万円">100～500万円</option>
+                    <option value="500～1000万円">500～1000万円</option>
+                    <option value="1000万円以上">1000万円以上</option>
                     <option value="答えられない">答えられない</option>
                     <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q4">質問４　今の収入に満足していますか。</label>
-                <select id="q4" name="q4" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問４ 今の収入に満足していますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -124,9 +90,9 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
-                <select id="q5" name="q5" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問５ 収入を副業等を行ってより増やしたいと考えていますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -134,9 +100,9 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q6">質問６　収入を増やすために副業等をしていますか。</label>
-                <select id="q6" name="q6" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問６ 収入を増やすために副業等をしていますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -144,9 +110,9 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q7">質問７　投資には興味がありますか。</label>
-                <select id="q7" name="q7" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問７ 投資には興味がありますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -154,39 +120,43 @@
                 </select>
             </div>
             <div class="question">
-                <label for="q8">質問８　投資で稼ぐ自信はありますか。</label>
-                <select id="q8" name="q8" required>
-                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
+                <label>質問８ 投資で稼ぐ自信はありますか。</label>
+                <select required>
+                    <option value="">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
                     <option value="その他">その他</option>
                 </select>
             </div>
-            <button type="submit" class="submit-btn">送信</button>
+            <button type="submit" class="submit-btn" disabled>送信</button>
         </form>
-        <div id="result" class="result" style="display: none;">
-            <p>アンケートのご協力ありがとうございました。</p>
-            <p>投資に興味のある方は、「投資に自信がない方も最低〇〇円は稼げる！投資のプロが教える絶対に成功する裏技投資術！」</p>
-            <a href="https://lin.ee/I7x60qK"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加"></a>
+        <div class="result-message">
+            <p>アンケートのご協力ありがとうございました。投資に興味のある方は、「投資に自信がない方も最低〇〇円は稼げる！投資のプロが教える絶対に成功する裏技投資術！」</p>
+            <a href="https://lin.ee/I7x60qK">
+                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
+            </a>
         </div>
     </div>
     <script>
-        document.getElementById('survey-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var valid = true;
-            var selects = document.querySelectorAll('select');
-            selects.forEach(function(select) {
-                if (select.value !== "" && select.value !== "選択肢から1つ選択してください") {
-                    valid = false;
+        const form = document.getElementById('surveyForm');
+        const submitBtn = document.querySelector('.submit-btn');
+        const resultMessage = document.querySelector('.result-message');
+
+        form.addEventListener('change', () => {
+            let allSelected = true;
+            form.querySelectorAll('select').forEach(select => {
+                if (select.value === "") {
+                    allSelected = false;
                 }
             });
-            if (valid) {
-                document.getElementById('survey-form').style.display = 'none';
-                document.getElementById('result').style.display = 'block';
-            } else {
-                alert('全ての質問に回答してください。');
-            }
+            submitBtn.disabled = !allSelected;
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            form.style.display = 'none';
+            resultMessage.style.display = 'block';
         });
     </script>
 </body>
