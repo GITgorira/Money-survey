@@ -174,7 +174,7 @@
             var valid = true;
             var selects = document.querySelectorAll('select');
             selects.forEach(function(select) {
-                if (select.value === "") {
+                if (select.value === "" || select.value === "選択肢から1つ選択してください") {
                     valid = false;
                 }
             });
