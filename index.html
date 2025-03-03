@@ -83,7 +83,7 @@
             <div class="question">
                 <label for="q1">質問１　仕事をしていますか。</label>
                 <select id="q1" name="q1" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -93,7 +93,7 @@
             <div class="question">
                 <label for="q2">質問２　どのような立場ですか。</label>
                 <select id="q2" name="q2" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="会社の正社員">会社の正社員</option>
                     <option value="派遣社員">派遣社員</option>
                     <option value="アルバイト">アルバイト</option>
@@ -104,7 +104,7 @@
             <div class="question">
                 <label for="q3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
                 <select id="q3" name="q3" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="０～１００万円">０～１００万円</option>
                     <option value="１００～５００万円">１００～５００万円</option>
                     <option value="５００～１０００万円">５００～１０００万円</option>
@@ -116,7 +116,7 @@
             <div class="question">
                 <label for="q4">質問４　今の収入に満足していますか。</label>
                 <select id="q4" name="q4" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -126,7 +126,7 @@
             <div class="question">
                 <label for="q5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
                 <select id="q5" name="q5" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -136,7 +136,7 @@
             <div class="question">
                 <label for="q6">質問６　収入を増やすために副業等をしていますか。</label>
                 <select id="q6" name="q6" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -146,7 +146,7 @@
             <div class="question">
                 <label for="q7">質問７　投資には興味がありますか。</label>
                 <select id="q7" name="q7" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -156,7 +156,7 @@
             <div class="question">
                 <label for="q8">質問８　投資で稼ぐ自信はありますか。</label>
                 <select id="q8" name="q8" required>
-                    <option value="">選択肢から1つ選択してください</option>
+                    <option value="" style="color: gray;">選択肢から1つ選択してください</option>
                     <option value="はい">はい</option>
                     <option value="いいえ">いいえ</option>
                     <option value="答えられない">答えられない</option>
@@ -177,7 +177,7 @@
             var valid = true;
             var selects = document.querySelectorAll('select');
             selects.forEach(function(select) {
-                if (select.value === "" || select.value === "選択肢から1つ選択してください") {
+                if (select.value !== "" && select.value !== "選択肢から1つ選択してください") {
                     valid = false;
                 }
             });
