@@ -8,163 +8,141 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
+            background: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
         }
         h1 {
             text-align: center;
-        }
-        .description {
-            text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         .question {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .question label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
-        .question select,
-        .question input[type="text"],
-        .question textarea {
+        .question select, .question input {
             width: 100%;
             padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            box-sizing: border-box;
         }
         .submit-btn {
             display: block;
             width: 100%;
             padding: 10px;
-            background: #0073e6;
-            color: #fff;
+            background-color: #007BFF;
+            color: white;
             border: none;
             border-radius: 4px;
-            font-size: 16px;
             cursor: pointer;
+            font-size: 16px;
         }
         .submit-btn:hover {
-            background: #005bb5;
+            background-color: #0056b3;
         }
-        .line-image {
-            display: block;
-            margin: 20px auto;
+        .line-friend {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>金融アンケート調査</h1>
-        <p class="description">これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
-        <form id="survey-form">
+        <h1>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</h1>
+        <form action="https://your-server.com/submit" method="POST">
             <div class="question">
-                <label for="q1">質問１：仕事をしていますか。</label>
-                <select id="q1" name="q1" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question1">質問１　仕事をしていますか。</label>
+                <select id="question1" name="question1">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q2">質問２：どのような立場ですか。</label>
-                <select id="q2" name="q2" required>
-                    <option value="">選択してください</option>
-                    <option value="full-time">会社の正社員</option>
-                    <option value="contract">派遣社員</option>
-                    <option value="part-time">アルバイト</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question2">質問２　どのような立場ですか。</label>
+                <select id="question2" name="question2">
+                    <option value="会社の正社員">会社の正社員</option>
+                    <option value="派遣社員">派遣社員</option>
+                    <option value="アルバイト">アルバイト</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q3">質問３：仕事等での収入（年収）はいくらほどですか。</label>
-                <select id="q3" name="q3" required>
-                    <option value="">選択してください</option>
-                    <option value="0-100">０～１００万円</option>
-                    <option value="100-500">１００～５００万円</option>
-                    <option value="500-1000">５００～１０００万円</option>
-                    <option value="1000+">１０００万円以上</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
+                <select id="question3" name="question3">
+                    <option value="０～１００万円">０～１００万円</option>
+                    <option value="１００～５００万円">１００～５００万円</option>
+                    <option value="５００～１０００万円">５００～１０００万円</option>
+                    <option value="１０００万円以上">１０００万円以上</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q4">質問４：今の収入に満足していますか。</label>
-                <select id="q4" name="q4" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question4">質問４　今の収入に満足していますか。</label>
+                <select id="question4" name="question4">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q5">質問５：収入を副業等を行ってより増やしたいと考えていますか。</label>
-                <select id="q5" name="q5" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
+                <select id="question5" name="question5">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q6">質問６：収入を増やすために副業等をしていますか。</label>
-                <select id="q6" name="q6" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question6">質問６　収入を増やすために副業等をしていますか。</label>
+                <select id="question6" name="question6">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q7">質問７：投資には興味がありますか。</label>
-                <select id="q7" name="q7" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question7">質問７　投資には興味がありますか。</label>
+                <select id="question7" name="question7">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <div class="question">
-                <label for="q8">質問８：投資で稼ぐ自信はありますか。</label>
-                <select id="q8" name="q8" required>
-                    <option value="">選択してください</option>
-                    <option value="yes">はい</option>
-                    <option value="no">いいえ</option>
-                    <option value="no-answer">答えられない</option>
-                    <option value="other">その他</option>
+                <label for="question8">質問８　投資で稼ぐ自信はありますか。</label>
+                <select id="question8" name="question8">
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
                 </select>
             </div>
             <button type="submit" class="submit-btn">送信</button>
         </form>
-        <img id="line-img" class="line-image" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="LINE友だち追加" style="display: none;">
-    </div>
-    <script>
-        document.getElementById('survey-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Hide the form
-            document.getElementById('survey-form').style.display = 'none';
-            // Show the LINE image
-            document.getElementById('line-img').style.display = 'block';
-            
+        <div class="line-friend">
             <a href="https://lin.ee/I7x60qK"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-        
-        });
-    </script>
+        </div>
+    </div>
 </body>
 </html>
