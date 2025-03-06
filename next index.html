@@ -75,7 +75,7 @@
         <h1>金融アンケート調査</h1>
     </div>
     <div class="container">
-
+        <form id="survey-form">
             <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
             <div class="question">
                 <label for="q1">質問１　仕事をしていますか。</label>
@@ -161,7 +161,7 @@
                 </select>
             </div>
             <button type="submit" class="submit-btn" disabled>送信</button>
-
+        </form>
     </div>
     <script>
         const form = document.getElementById('survey-form');
@@ -176,7 +176,6 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             window.location.href = 'next2 index.html';
-            form.style.display = 'none';
             thankYouMessage.style.display = 'block';
 
         });
