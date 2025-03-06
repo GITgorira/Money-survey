@@ -7,177 +7,160 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
         }
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        .header {
-            background-color: #0a3d62;
-            color: #fff;
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
             text-align: center;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
         }
         .question {
-            margin-bottom: 15px;
-        }
-        .question label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .question select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .question select option:first-child {
-            color: gray;
+            margin: 20px 0;
         }
         .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: #007BFF;
-            color: #fff;
+            background-color: #4CAF50; /* Green */
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            color: white;
+            padding: 15px 32px;
             text-align: center;
+            text-decoration: none;
+            display: inline-block;
             font-size: 16px;
+            cursor: pointer;
         }
         .submit-btn:disabled {
-            background-color: #999;
+            background-color: #a5a5a5; /* Gray */
+            cursor: not-allowed;
         }
-        .thank-you {
-            
-            text-align: center;
-        }
-        .thank-you a {
-            
-            margin-top: 20px;
+        .select-default {
+            color: gray;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>金融アンケート調査</h1>
-    </div>
     <div class="container">
+        <h1>金融アンケート調査</h1>
+        <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
+        
         <form id="survey-form">
-            <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
             <div class="question">
-                <label for="q1">質問１　仕事をしていますか。</label>
-                <select id="q1" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question1">質問1: 仕事をしていますか。</label>
+                <select id="question1" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q2">質問２　どのような立場ですか。</label>
-                <select id="q2" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="会社の正社員">会社の正社員</option>
-                    <option value="派遣社員">派遣社員</option>
-                    <option value="アルバイト">アルバイト</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question2">質問2: どのような立場ですか。</label>
+                <select id="question2" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="full-time">会社の正社員</option>
+                    <option value="temp">派遣社員</option>
+                    <option value="part-time">アルバイト</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
-                <select id="q3" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="０～１００万円">０～１００万円</option>
-                    <option value="１００～５００万円">１００～５００万円</option>
-                    <option value="５００～１０００万円">５００～１０００万円</option>
-                    <option value="１０００万円以上">１０００万円以上</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question3">質問3: 仕事等での収入（年収）はいくらほどですか。</label>
+                <select id="question3" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="0-100">０～１００万円</option>
+                    <option value="100-500">１００～５００万円</option>
+                    <option value="500-1000">５００～１０００万円</option>
+                    <option value="1000+">１０００万円以上</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q4">質問４　今の収入に満足していますか。</label>
-                <select id="q4" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question4">質問4: 今の収入に満足していますか。</label>
+                <select id="question4" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
-                <select id="q5" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question5">質問5: 収入を副業等を行ってより増やしたいと考えていますか。</label>
+                <select id="question5" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q6">質問６　収入を増やすために副業等をしていますか。</label>
-                <select id="q6" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question6">質問6: 収入を増やすために副業等をしていますか。</label>
+                <select id="question6" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q7">質問７　投資には興味がありますか。</label>
-                <select id="q7" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question7">質問7: 投資には興味がありますか。</label>
+                <select id="question7" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
+
             <div class="question">
-                <label for="q8">質問８　投資で稼ぐ自信はありますか。</label>
-                <select id="q8" required>
-                    <option value="" disabled selected>選択肢から1つ選択してください</option>
-                    <option value="はい">はい</option>
-                    <option value="いいえ">いいえ</option>
-                    <option value="答えられない">答えられない</option>
-                    <option value="その他">その他</option>
+                <label for="question8">質問8: 投資で稼ぐ自信はありますか。</label>
+                <select id="question8" class="question-select" required>
+                    <option value="" class="select-default">選択肢から1つ選択してください</option>
+                    <option value="yes">はい</option>
+                    <option value="no">いいえ</option>
+                    <option value="unknown">答えられない</option>
+                    <option value="other">その他</option>
                 </select>
             </div>
-            <button type="submit" class="submit-btn" disabled>送信</button>
+
+            <button id="submit-btn" type="submit" class="submit-btn" disabled>送信</button>
         </form>
     </div>
+
     <script>
         const form = document.getElementById('survey-form');
-        const submitBtn = document.querySelector('.submit-btn');
-        const thankYouMessage = document.querySelector('.thank-you');
-        
-        form.addEventListener('input', () => {
-            const allSelected = Array.from(form.querySelectorAll('select')).every(select => select.value !== "");
+        const submitBtn = document.getElementById('submit-btn');
+        const selects = document.querySelectorAll('.question-select');
+
+        function checkSelections() {
+            let allSelected = true;
+            selects.forEach(select => {
+                if (select.value === "") {
+                    allSelected = false;
+                }
+            });
             submitBtn.disabled = !allSelected;
-            window.location.href = 'next2 index.html';
-        });
-        
-        form.addEventListener('submit', (event) => {
-            window.location.href = 'next2 index.html';
+        }
+
+        selects.forEach(select => {
+            select.addEventListener('change', checkSelections);
         });
 
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            location.href = 'next2_index.html';
+        });
     </script>
 </body>
 </html>
