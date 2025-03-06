@@ -176,6 +176,9 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             window.location.href = 'next-page.html';
+            form.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+
         });
     </script>
 </body>
