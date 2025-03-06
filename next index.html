@@ -160,21 +160,21 @@
                     <option value="その他">その他</option>
                 </select>
             </div>
-            <button type="submit" id="submitBtn" disabled>送信</button>
+            <button type="submit" id="submit-Btn" disabled>送信</button>
         </form>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('myForm');
-            const submitBtn = document.getElementById('submitBtn');
+            const form = document.getElementById('survey-form');
+            const submitBtn = document.getElementById('submit-btn');
             form.addEventListener('input', () => {
                 const allSelected = Array.from(form.querySelectorAll('select')).every(select => select.value !== "");
-                submitBtn.disabled = !allSelected;
+                submit-btn.disabled = !allSelected;
             });
 
             form.addEventListener('submit', (event) => {
                 event.preventDefault();
-                window.location.href = 'next-page.html';
+                window.location.href = 'next2 index.html';
             });
         });
     </script>
