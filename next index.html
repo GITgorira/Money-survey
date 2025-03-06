@@ -171,7 +171,6 @@
         form.addEventListener('input', () => {
             const allSelected = Array.from(form.querySelectorAll('select')).every(select => select.value !== "");
             submitBtn.disabled = !allSelected;
-            
         });
 
         form.addEventListener('submit', (event) => {
