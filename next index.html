@@ -171,13 +171,12 @@
         form.addEventListener('input', () => {
             const allSelected = Array.from(form.querySelectorAll('select')).every(select => select.value !== "");
             submitBtn.disabled = !allSelected;
+            window.location.href = 'next2 index.html';
         });
         
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             window.location.href = 'next2 index.html';
-            form.style.display = 'none';
-            thankYouMessage.style.display = 'block';
         });
 
     </script>
