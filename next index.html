@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金融アンケート調査</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .header {
+            background-color: #0a3d62;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question select option:first-child {
+            color: gray;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+        }
+        .submit-btn:disabled {
+            background-color: #999;
+        }
+        .thank-you {
+            display: none;
+            text-align: center;
+        }
+        .thank-you a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>金融アンケート調査</h1>
+    </div>
+    <div class="container">
+        <form id="survey-form">
+            <p>これは収入等を調査するアンケートです。ただし、回答に困った場合は「その他」に入れてください。</p>
+            <div class="question">
+                <label for="q1">質問１　仕事をしていますか。</label>
+                <select id="q1" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q2">質問２　どのような立場ですか。</label>
+                <select id="q2" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="会社の正社員">会社の正社員</option>
+                    <option value="派遣社員">派遣社員</option>
+                    <option value="アルバイト">アルバイト</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q3">質問３　仕事等での収入（年収）はいくらほどですか。</label>
+                <select id="q3" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="０～１００万円">０～１００万円</option>
+                    <option value="１００～５００万円">１００～５００万円</option>
+                    <option value="５００～１０００万円">５００～１０００万円</option>
+                    <option value="１０００万円以上">１０００万円以上</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q4">質問４　今の収入に満足していますか。</label>
+                <select id="q4" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q5">質問５　収入を副業等を行ってより増やしたいと考えていますか。</label>
+                <select id="q5" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q6">質問６　収入を増やすために副業等をしていますか。</label>
+                <select id="q6" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q7">質問７　投資には興味がありますか。</label>
+                <select id="q7" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q8">質問８　投資で稼ぐ自信はありますか。</label>
+                <select id="q8" required>
+                    <option value="" disabled selected>選択肢から1つ選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn" disabled>送信</button>
+        </form>
+        <div class="thank-you">
+            <p>アンケートのご協力ありがとうございました。</p>
+            <p>投資に興味のある方はこちら、</p>
+            <p>「投資に自信がない方も最低〇〇円は稼げる！投資のプロが教える絶対に成功する裏技投資術！」</p>
+            <a href="https://lin.ee/I7x60qK"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="56" border="0"></a>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('survey-form');
+        const submitBtn = document.querySelector('.submit-btn');
+        const thankYouMessage = document.querySelector('.thank-you');
+        
+        form.addEventListener('input', () => {
+            const allSelected = Array.from(form.querySelectorAll('select')).every(select => select.value !== "");
+            submitBtn.disabled = !allSelected;
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            form.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
 
